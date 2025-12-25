@@ -1,0 +1,82 @@
+doc/
+.vscode/
+# A .gitignore for Keil projects.
+# Taken mostly from http://www.keil.com/support/man/docs/uv4/uv4_b_filetypes.htm
+
+# User-specific uVision files
+MDK_Project/*.opt
+MDK_Project/*.uvopt
+MDK_Project/*.uvoptx
+MDK_Project/*.uvgui
+MDK_Project/*.uvgui.*
+MDK_Project/*.uvguix.*
+
+# Listing files
+MDK_Project/*.cod
+MDK_Project/*.htm
+MDK_Project/*.i
+MDK_Project/*.lst
+MDK_Project/*.map
+MDK_Project/*.m51
+MDK_Project/*.m66
+# define exception below if needed
+MDK_Project/*.scr
+
+# Object and HEX files
+MDK_Project/*.axf
+MDK_Project/*.b[0-3][0-9]
+MDK_Project/*.hex
+MDK_Project/*.d
+MDK_Project/*.crf
+MDK_Project/*.elf
+MDK_Project/*.hex
+MDK_Project/*.h86
+MDK_Project/*.lib
+MDK_Project/*.obj
+MDK_Project/*.o
+MDK_Project/*.sbr
+
+# Build files
+# define exception below if needed
+MDK_Project/*.bat
+MDK_Project/*._ia
+MDK_Project/*.__i
+MDK_Project/*._ii
+
+# Generated output files
+MDK_Project/Listings/*
+MDK_Project/Objects/*
+
+# Debugger files
+# define exception below if needed
+MDK_Project/*.ini
+
+# Other files
+MDK_Project/*.build_log.htm
+MDK_Project/*.cdb
+MDK_Project/*.dep
+MDK_Project/*.ic
+MDK_Project/*.lin
+MDK_Project/*.lnp
+MDK_Project/*.orc
+# define exception below if needed
+MDK_Project/*.pack
+# define exception below if needed
+MDK_Project/*.pdsc
+MDK_Project/*.plg
+# define exception below if needed
+MDK_Project/*.sct
+MDK_Project/*.sfd
+MDK_Project/*.sfr
+
+# Miscellaneous
+MDK_Project/*.tra
+MDK_Project/*.bin
+MDK_Project/*.fed
+MDK_Project/*.l1p
+MDK_Project/*.l2p
+MDK_Project/*.iex
+
+# To explicitly override the above, define any exceptions here; e.g.:
+# !my_customized_scatter_file.sct
+MDK_Project/*.scvd
