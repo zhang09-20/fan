@@ -683,7 +683,7 @@ void Led_Deal(void)
         }
         if (DG1_1 == 1) {
             led_io_D_out;
-            PIN_D = 0;
+//            PIN_D = 0;
         }
         if (DG1_2 == 1) {
             led_io_E_out;

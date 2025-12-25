@@ -106,7 +106,7 @@ static void motor_run(void) /*正常运行，包括一些任务，计速，保�
     uint16_t PotAdcData, PwmDuty, pwm_duty;
 //    motor_handle_protection();
 #ifdef SPEED_OPEN_LOOP /*开环*/
-    // PotAdcData = 4094; // 819;//motor_get_pot_ADCData();
+//     PotAdcData = 4094; // 819;//motor_get_pot_ADCData();
     // //    if (PotAdcData < 300) {
     // //        g_sysmode = STOPMODE;
     // //    }
@@ -114,7 +114,7 @@ static void motor_run(void) /*正常运行，包括一些任务，计速，保�
     // =====================================================
     PotAdcData = return_PotAdcData();
     // =====================================================
-
+//        PotAdcData = 3562;
     if (1 == g_bldc_motor.pwm_change) {
 
         PwmDuty = ((uint32_t)PotAdcData * MAX_DUTY) >> 12; /*占空比*/

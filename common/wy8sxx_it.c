@@ -27,7 +27,7 @@ void _TIMER1_IRQHandler(void) interrupt TIMER1_VECTOR /*1ms*/
     // ===== 自定义 5ms周期 ========================
     // Flag_1ms = 1;
 
-    Led_Deal();
+//    Led_Deal();
 
     if (++Flag_5ms_counter >= 5) {
         Flag_5ms_counter = 0;
@@ -80,6 +80,7 @@ void _TIMER2_IRQHandler(void) interrupt TIMER2_VECTOR
 void _TIMER3_IRQHandler(void) interrupt TIMER3_VECTOR
 {
     DISABLE_TIMER3;
+//    P04 =! P04;
     g_bldc_motor.pwm_change = 1;
     switch (g_bldc_motor.phase) {
     case 0:
@@ -173,11 +174,12 @@ void _ACMP_IRQHandler(void) interrupt ACMP_VECTOR
 {
     uint16_t u16data;
     ClrSENSE;
-
+//    P04 =! P04;
     if (1 == g_bldc_motor.interacmp) {
 
         ACMP0_HYSCTL_SEL(ACMP0_HYSCTL_CLOSE);
     } else {
+//        P04 =! P04;
         if (0 == g_bldc_motor.phase % 2) {
             ACMP0_HYSCTL_SEL(ACMP0_HYSCTL_P);
 
@@ -193,7 +195,7 @@ void _ACMP_IRQHandler(void) interrupt ACMP_VECTOR
     }
     g_bldc_motor.interacmp++;
     if (2 == g_bldc_motor.interacmp) {
-
+//        P04 =! P04;
         if (12 > g_bldc_motor.timer_30) {
             g_bldc_motor.timer_30++;
             if (0 == g_bldc_motor.phase % 2) {
@@ -207,11 +209,11 @@ void _ACMP_IRQHandler(void) interrupt ACMP_VECTOR
             if (0 == g_bldc_motor.phase % 2) // 下
             {
 
-                u16data = 65535 - (g_bldc_motor.speed_count[1] >> 3) - 50; // 下
+                u16data = 65535 - (g_bldc_motor.speed_count[1] >> 3); // 下
 
-            } else                                                         // 上
+            } else                                                    // 上
             {
-                u16data = 65535 - (g_bldc_motor.speed_count[2] >> 3) - 50; // 上
+                u16data = 65535 - (g_bldc_motor.speed_count[2] >> 2)+50; // 上
             }
         }
 

@@ -85,13 +85,13 @@
 #define MOTOR_POLES 2 // 电机极对数
 #define MOTORDIR    1 // 电机正反转（MOTOR_DIR_CCW逆时针，MOTOR_DIR_CW顺时针）
 /*******************PWM配置*****************************/
-#define PWM_CARRIER 80000                      // 载频（HZ）
+#define PWM_CARRIER 120000                      // 载频（HZ）
 #define MAX_DUTY    (SYSCLK / PWM_CARRIER / 2) // 最大占空比（此处为了好算故不减一）
 /*******************启动算法*****************************/
 #define STARTING_RATIO        20 // 启动占空比
 #define NOSEN_MIN_DUTY        (MAX_DUTY * STARTING_RATIO / 100)
 
-#define ACMP_FILT             2  // 0-7
+#define ACMP_FILT             2 // 0-7
 #define START_DELAY           82 //(单位0.1ms,不同电机启动时间需要微调，高转数电机需要调小，低转速电机需要调大)
 #define START_STEP_NUM        4  // 拖动步数,建议2-6之间
 #define START_CROSSZERO_DELAY 2600
